@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./LoginForm.css"; // Import the external CSS file
+import "./LoginForm.css";
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -11,7 +11,7 @@ const LoginForm = () => {
       return;
     }
 
-    // Simulated login logic
+    // login logic
     if (email === "manu.com" && password === "manpreet123") {
       setErrorMessage("");
       alert("Login successful!");
