@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./LoginForm.css";
-const LoginForm = () => {
+
+const LoginForm = ({ onLoginSuccess }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -11,14 +12,15 @@ const LoginForm = () => {
       return;
     }
 
-    // login logic
+    // ✅ If credentials are correct, log in
     if (email === "manu.com" && password === "manpreet123") {
       setErrorMessage("");
-      alert("Login successful!");
+      onLoginSuccess(); // Call function to render Todo List
     } else {
       setErrorMessage("Invalid credentials.");
     }
   };
+
   return (
     <div className="login-container">
       <h2>Login</h2>
